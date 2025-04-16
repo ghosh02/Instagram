@@ -10,7 +10,7 @@ const useGetFollowedUsers = () => {
     const fetchSuggestedUsers = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:4000/api/v1/user/followed",
+          "https://instagram-tk62.onrender.com/api/v1/user/followed",
           { withCredentials: true }
         );
         if (res.data.success) {

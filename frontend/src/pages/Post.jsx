@@ -43,7 +43,7 @@ const Post = ({ post }) => {
     try {
       const action = liked ? "dislike" : "like";
       const res = await axios.get(
-        `http://localhost:4000/api/v1/post/${action}/${post._id}`,
+        `https://instagram-tk62.onrender.com/api/v1/post/${action}/${post._id}`,
         { withCredentials: true }
       );
       console.log(res.data);
@@ -74,7 +74,7 @@ const Post = ({ post }) => {
   const commentHandler = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:4000/api/v1/post/comment/${post._id}`,
+        `https://instagram-tk62.onrender.com/api/v1/post/comment/${post._id}`,
         { text },
         {
           headers: {
@@ -105,7 +105,7 @@ const Post = ({ post }) => {
   const deletePostHandler = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/api/v1/post/delete/${post?._id}`,
+        `https://instagram-tk62.onrender.com/api/v1/post/delete/${post?._id}`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -124,7 +124,7 @@ const Post = ({ post }) => {
   const bookmarkHandler = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:4000/api/v1/post/bookmarkpost/${post?._id}`,
+        `https://instagram-tk62.onrender.com/api/v1/post/bookmarkpost/${post?._id}`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -159,7 +159,7 @@ const Post = ({ post }) => {
   const followUnfollowHandler = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:4000/api/v1/user/followorunfollow/${post.author._id}`,
+        `https://instagram-tk62.onrender.com/api/v1/user/followorunfollow/${post.author._id}`,
         {},
         {
           headers: {

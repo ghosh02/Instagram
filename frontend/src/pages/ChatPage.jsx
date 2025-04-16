@@ -25,7 +25,7 @@ const ChatPage = () => {
     try {
       console.log(textMessage);
       const res = await axios.post(
-        `http://localhost:4000/api/v1/message/send/${receiverId}`,
+        `https://instagram-tk62.onrender.com/api/v1/message/send/${receiverId}`,
         { textMessage },
         {
           headers: {

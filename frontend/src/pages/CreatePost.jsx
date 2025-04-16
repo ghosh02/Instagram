@@ -36,7 +36,7 @@ const CreatePost = ({ open, setOpen }) => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:4000/api/v1/post/addpost",
+        "https://instagram-tk62.onrender.com/api/v1/post/addpost",
         formData,
         {
           headers: {
