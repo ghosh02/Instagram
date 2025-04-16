@@ -17,6 +17,6 @@ router.get("/dislike/:id", isAuthenticated, postController.dislikePost);
 router.post("/comment/:id", isAuthenticated, postController.addComment);
 router.get("/allcomments/:id", isAuthenticated, postController.getAllComments);
 router.delete("/delete/:id", isAuthenticated, postController.deletePost);
-router.post("/bookmarkpost/:id", isAuthenticated, postController.bookmarkPost);
+router.get("/bookmarkpost/:id", isAuthenticated, postController.bookmarkPost);
 
 module.exports = router;

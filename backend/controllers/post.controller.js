@@ -228,13 +228,21 @@ module.exports.bookmarkPost = async (req, res) => {
       await user.save();
       return res
         .status(200)
-        .json({ type: "unsaved", message: "Post removed from bookmarks" });
+        .json({
+          type: "unsaved",
+          message: "Post removed from bookmarks",
+          success: true,
+        });
     } else {
       await user.updateOne({ $addToSet: { bookmarks: post._id } });
       await user.save();
       return res
         .status(200)
-        .json({ type: "saved", message: "Post added to bookmarks" });
+        .json({
+          type: "saved",
+          message: "Post added to bookmarks",
+          success: true,
+        });
     }
   } catch (error) {
     console.log(error);

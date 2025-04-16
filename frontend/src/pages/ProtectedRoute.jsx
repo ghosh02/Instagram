@@ -27,7 +27,10 @@ const ProtectedRoutes = ({ children }) => {
   useEffect(() => {
     if (!user) {
       navigate("/login");
-    } else if (user && location.pathname === "/login") {
+    } else if (
+      (user && location.pathname === "/login") ||
+      (user && location.pathname === "/signup")
+    ) {
       navigate("/");
     }
   }, [user, navigate, location.pathname]);
