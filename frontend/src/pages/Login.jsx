@@ -14,7 +14,7 @@ const Login = () => {
     password: "",
   });
   const [loading, setLoading] = useState(false);
-  // const {userData} = useSelector(store=>store.auth);
+  const { user } = useSelector((store) => store.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const changeEventHandler = (e) => {
@@ -52,11 +52,11 @@ const Login = () => {
     }
   };
 
-  //   useEffect(() => {
-  //     if (user) {
-  //       navigate("/");
-  //     }
-  //   }, []);
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, []);
   return (
     <div className="flex items-center w-screen h-screen justify-center">
       <form
@@ -64,7 +64,14 @@ const Login = () => {
         className="shadow-lg flex flex-col gap-5 p-8"
       >
         <div className="my-4">
-          <h1 className="text-center font-bold text-xl">LOGO</h1>
+          <div className="w-full flex justify-center items-center ">
+            <img
+              src="/logo.png"
+              alt="logo"
+              className="w-32 h-18 object-cover"
+            />
+          </div>
+          {/* <h1 className="text-center font-bold text-xl">LOGO</h1> */}
           <p className="text-sm text-center">
             Login to see photos & videos from your friends
           </p>
